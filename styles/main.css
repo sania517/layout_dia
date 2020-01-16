@@ -318,6 +318,41 @@ ul {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg); }
 
+.slider__caption {
+  position: absolute;
+  bottom: 86px;
+  left: 98px; }
+  @media screen and (max-width: 1020px) {
+    .slider__caption {
+      bottom: 40px;
+      left: 60px; } }
+  @media screen and (max-width: 600px) {
+    .slider__caption {
+      bottom: 20px;
+      left: 30px; } }
+
+.slider__caption-title {
+  font-size: 12.6px;
+  font-weight: 800;
+  line-height: 150%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #56ccf2; }
+  @media screen and (max-width: 600px) {
+    .slider__caption-title {
+      font-size: 10px; } }
+
+.slider__caption-text {
+  font-size: 19.6px;
+  font-weight: 900;
+  line-height: 140%;
+  color: #fff;
+  width: 264px; }
+  @media screen and (max-width: 600px) {
+    .slider__caption-text {
+      font-size: 10px;
+      width: 150px; } }
+
 .networks-nav {
   position: absolute; }
   .networks-nav__list {
