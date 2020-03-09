@@ -154,6 +154,7 @@
     background-color: $c-links;
     padding: 16px 65px;
     border-radius: 65px;
+    width: fit-content;
     font-size: 16px;
     font-family: Muli, sans-serif;
     font-weight: bold;
@@ -169,7 +170,6 @@
       & {
         display: block;
         margin: 0 auto 6%;
-
       }
     }
   }

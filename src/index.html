@@ -19,7 +19,7 @@
         <h3 class="header__text">By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside,
            the sable cloud beneath.
         </h3>
-        <button class="header__button">Learn more</button>
+        <button class="header__button" onclick="location.href='#welcome'">Learn more</button>
         <nav class="header__main-nav nav nav--burger">
           <ul class="nav__list">
             <li class="nav__element">
@@ -226,7 +226,7 @@
             By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside,
              the sable cloud beneath.
           </p>
-          <button class="result__button">Apply</button>
+          <button class="result__button" onclick="location.href='#contact-us'">Apply</button>
           <ul class="result__decor-list">
             <li class="result__decor-item result__decor-item--red"></li>
             <li class="result__decor-item result__decor-item--yellow"></li>
@@ -247,7 +247,7 @@
         <div class="contact__container">
           <div class="contact__send">
             <div class="contact__title-send title-block">Send us  a message</div>
-            <form class="contact__send-form form" action="post" target="">
+            <form class="contact__send-form form" method="POST" target="" onsubmit="return false">
               <input type="email" class="form__email" placeholder="Your email">
               <input type="text" class="form__name" placeholder="Your name">
               <input type="text" class="form__message" placeholder="Your message">

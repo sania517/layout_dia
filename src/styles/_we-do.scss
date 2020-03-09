@@ -34,17 +34,24 @@
     color: $c-text-black;
     left: 50%;
     top: 0;
+    box-shadow: none;
     transform: translate(-50%, -50%);
   }
 
   &__card {
     width: 264px;
     margin: 0 64px 40px;
+    transition: transform 0.5s, box-shadow 0.5s;
 
     @media screen and (max-width: 1020px) {
       & {
         margin: 0 5% 40px;
       }
     }
+  }
+
+  &__card:hover {
+    transform: scale(1.05);
+    box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.05);
   }
 }
