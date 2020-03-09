@@ -182,6 +182,9 @@ a:visited {
     background-color: #fff;
     padding: 16px 65px;
     border-radius: 65px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     font-size: 16px;
     font-family: Muli, sans-serif;
     font-weight: bold;
@@ -293,6 +296,39 @@ ul {
   -o-object-fit: cover;
      object-fit: cover; }
 
+.slider__carousel {
+  list-style-type: none;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden; }
+
+.slider__item {
+  position: absolute;
+  -webkit-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+  -webkit-transition: -webkit-transform 0.5s linear;
+  transition: -webkit-transform 0.5s linear;
+  transition: transform 0.5s linear;
+  transition: transform 0.5s linear, -webkit-transform 0.5s linear;
+  background-color: white;
+  height: 100%;
+  width: 100%; }
+
+.slider__item:first-of-type {
+  z-index: 1; }
+
+.slider__item--active {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  z-index: 1; }
+
+.slider__item--active ~ .slider__item {
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0); }
+
 .slider__buttons-list {
   height: 64px;
   width: 162px;
@@ -300,6 +336,7 @@ ul {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
+  z-index: 2;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -336,7 +373,8 @@ ul {
 .slider__caption {
   position: absolute;
   bottom: 86px;
-  left: 98px; }
+  left: 98px;
+  z-index: 2; }
   @media screen and (max-width: 1020px) {
     .slider__caption {
       bottom: 40px;
@@ -502,14 +540,25 @@ button {
     color: #253757;
     left: 50%;
     top: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
   .we-do__card {
     width: 264px;
-    margin: 0 64px 40px; }
+    margin: 0 64px 40px;
+    -webkit-transition: -webkit-transform 0.5s, -webkit-box-shadow 0.5s;
+    transition: -webkit-transform 0.5s, -webkit-box-shadow 0.5s;
+    transition: transform 0.5s, box-shadow 0.5s;
+    transition: transform 0.5s, box-shadow 0.5s, -webkit-transform 0.5s, -webkit-box-shadow 0.5s; }
     @media screen and (max-width: 1020px) {
       .we-do__card {
         margin: 0 5% 40px; } }
+  .we-do__card:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.05);
+            box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.05); }
 
 .card__frame-img {
   height: 160px;
@@ -616,7 +665,16 @@ button {
   -webkit-box-shadow: 16px 16px 16px rgba(0, 0, 0, 0.02);
           box-shadow: 16px 16px 16px rgba(0, 0, 0, 0.02);
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  -webkit-transition: -webkit-transform 0.5s, -webkit-box-shadow 0.5s;
+  transition: -webkit-transform 0.5s, -webkit-box-shadow 0.5s;
+  transition: transform 0.5s, box-shadow 0.5s;
+  transition: transform 0.5s, box-shadow 0.5s, -webkit-transform 0.5s, -webkit-box-shadow 0.5s; }
+  .advantage-card:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.05);
+            box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.05); }
   .advantage-card:nth-of-type(2n) {
     top: 48px; }
   .advantage-card:nth-of-type(2n+1) {
@@ -850,7 +908,14 @@ button {
         width: 80%; } }
   .testimonials__card {
     width: 314px;
-    margin: 0 20px 60px; }
+    margin: 0 20px 60px;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s; }
+    .testimonials__card:hover {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1); }
     @media screen and (max-width: 500px) {
       .testimonials__card {
         margin: 0 0 60px; } }
@@ -1385,6 +1450,7 @@ body {
 
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 /*# sourceMappingURL=main.css.map */
